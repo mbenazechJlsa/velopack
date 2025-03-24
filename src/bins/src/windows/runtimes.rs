@@ -424,6 +424,7 @@ impl RuntimeInfo for DotnetInfo {
             RuntimeArch::X86 => "x86",
             RuntimeArch::X64 => "x64",
             RuntimeArch::Arm64 => "arm64",
+            RuntimeArch::Arm => "armv7",
         };
 
         let download_url = match self.runtime_type {
