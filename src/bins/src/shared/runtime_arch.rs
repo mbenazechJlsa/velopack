@@ -3,6 +3,7 @@ pub enum RuntimeArch {
     X86,
     X64,
     Arm64,
+    Arm,
 }
 
 impl RuntimeArch {
@@ -12,18 +13,17 @@ impl RuntimeArch {
             0x014c => Some(RuntimeArch::X86),
             0x8664 => Some(RuntimeArch::X64),
             0xAA64 => Some(RuntimeArch::Arm64),
+            0x01c0 => Some(RuntimeArch::Arm), 
             _ => None,
         }
     }
 
     pub fn from_str(arch_str: &str) -> Option<Self> {
         match arch_str.to_lowercase().as_str() {
-            "x86" => Some(RuntimeArch::X86),
-            "i386" => Some(RuntimeArch::X86),
-            "x64" => Some(RuntimeArch::X64),
-            "x86_64" => Some(RuntimeArch::X64),
-            "arm64" => Some(RuntimeArch::Arm64),
-            "aarch64" => Some(RuntimeArch::Arm64),
+            "x86" | "i386" => Some(RuntimeArch::X86),
+            "x64" | "x86_64" => Some(RuntimeArch::X64),
+            "arm64" | "aarch64" => Some(RuntimeArch::Arm64),
+            "arm" | "armv7" | "armv7l" => Some(RuntimeArch::Arm),
             _ => None,
         }
     }
@@ -115,6 +115,8 @@ fn test_cpu_arch_from_str() {
     assert_eq!(RuntimeArch::from_str("x86"), Some(RuntimeArch::X86));
     assert_eq!(RuntimeArch::from_str("x64"), Some(RuntimeArch::X64));
     assert_eq!(RuntimeArch::from_str("arm64"), Some(RuntimeArch::Arm64));
+    assert_eq!(RuntimeArch::from_str("armv7"), Some(RuntimeArch::Arm));
+    assert_eq!(RuntimeArch::from_str("armv7l"), Some(RuntimeArch::Arm));
     assert_eq!(RuntimeArch::from_str("foo"), None);
     assert_eq!(RuntimeArch::from_str("X86"), Some(RuntimeArch::X86));
     assert_eq!(RuntimeArch::from_str("X64"), Some(RuntimeArch::X64));
