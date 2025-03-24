@@ -55,22 +55,18 @@ jobs:
           move target\i686-pc-windows-msvc\release\velopack_nodeffi.dll target\velopack_nodeffi_win_x86_msvc.node 
           move target\x86_64-pc-windows-msvc\release\velopack_nodeffi.dll target\velopack_nodeffi_win_x64_msvc.node
           move target\aarch64-pc-windows-msvc\release\velopack_nodeffi.dll target\velopack_nodeffi_win_arm64_msvc.node
-          move target\armv7-pc-windows-msvc\release\velopack_nodeffi.dll target\velopack_nodeffi_win_armv7_msvc.node
 
           move target\i686-pc-windows-msvc\release\velopack_libc.dll target\velopack_libc_win_x86_msvc.dll
           move target\x86_64-pc-windows-msvc\release\velopack_libc.dll target\velopack_libc_win_x64_msvc.dll
           move target\aarch64-pc-windows-msvc\release\velopack_libc.dll target\velopack_libc_win_arm64_msvc.dll
-          move target\armv7-pc-windows-msvc\release\velopack_libc.dll target\velopack_libc_win_armv7_msvc.dll
 
           move target\i686-pc-windows-msvc\release\velopack_libc.dll.lib target\velopack_libc_win_x86_msvc.dll.lib
           move target\x86_64-pc-windows-msvc\release\velopack_libc.dll.lib target\velopack_libc_win_x64_msvc.dll.lib
           move target\aarch64-pc-windows-msvc\release\velopack_libc.dll.lib target\velopack_libc_win_arm64_msvc.dll.lib
-          move target\armv7-pc-windows-msvc\release\velopack_libc.dll.lib target\velopack_libc_win_armv7_msvc.dll.lib
 
           move target\i686-pc-windows-msvc\release\velopack_libc.lib target\velopack_libc_win_x86_msvc.lib
           move target\x86_64-pc-windows-msvc\release\velopack_libc.lib target\velopack_libc_win_x64_msvc.lib
           move target\aarch64-pc-windows-msvc\release\velopack_libc.lib target\velopack_libc_win_arm64_msvc.lib
-          move target\armv7-pc-windows-msvc\release\velopack_libc.lib target\velopack_libc_win_armv7_msvc.lib
       - name: Upload Rust Build Artifacts
         uses: actions/upload-artifact@v4
         with:
