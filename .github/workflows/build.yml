@@ -97,8 +97,10 @@ jobs:
       - name: Install Dependencies
         run: |
           rustup target add aarch64-unknown-linux-gnu
+          rustup target add armv7-unknown-linux-gnueabihf
           sudo apt update
           sudo apt install -y g++-aarch64-linux-gnu gcc-aarch64-linux-gnu
+          sudo apt install -y gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
       - name: Update Version
         shell: pwsh
         run: ./set-nbgv-version.ps1
