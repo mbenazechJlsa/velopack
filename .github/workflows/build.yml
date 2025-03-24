@@ -50,8 +50,6 @@ jobs:
         run: cargo +1.75.0-x86_64-pc-windows-msvc build --target x86_64-pc-windows-msvc --release -p velopack_nodeffi -p velopack_libc
       - name: Build Rust (arm64)
         run: cargo +1.75.0-x86_64-pc-windows-msvc build --target aarch64-pc-windows-msvc --release -p velopack_nodeffi -p velopack_libc
-      - name: Build Rust (armv7)
-        run: cargo +1.75.0-x86_64-pc-windows-msvc build --target armv7-pc-windows-msvc --release -p velopack_nodeffi -p velopack_libc
       - name: Collect Artifacts
         run: |
           move target\i686-pc-windows-msvc\release\velopack_nodeffi.dll target\velopack_nodeffi_win_x86_msvc.node 
