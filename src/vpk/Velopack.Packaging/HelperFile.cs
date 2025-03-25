@@ -60,7 +60,7 @@ public static class HelperFile
 
     public static string AppImageRuntimeArm64 => FindHelperFile("appimagekit-runtime-aarch64");
 
-    public static string AppImageRuntimeArm => FindHelperFile("appimagekit-runtime-armv7");
+    public static string AppImageRuntimeArm => FindHelperFile("appimagekit-runtime-armv7hf");
 
     public static string AppImageRuntimeX64 => FindHelperFile("appimagekit-runtime-x86_64");
 
