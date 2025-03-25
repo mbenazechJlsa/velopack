@@ -24,6 +24,7 @@ public static class HelperFile
             }
 
             return target.Architecture switch {
+                RuntimeCpu.arm => FindHelperFile("UpdateNix_armv7"),
                 RuntimeCpu.arm64 => FindHelperFile("UpdateNix_arm64"),
                 RuntimeCpu.x64 => FindHelperFile("UpdateNix_x64"),
                 _ => throw new PlatformNotSupportedException($"Update binary is not available for this platform ({target}).")
@@ -58,6 +59,8 @@ public static class HelperFile
     public static string VelopackEntitlements => FindHelperFile("Velopack.entitlements");
 
     public static string AppImageRuntimeArm64 => FindHelperFile("appimagekit-runtime-aarch64");
+
+    public static string AppImageRuntimeArm => FindHelperFile("appimagekit-runtime-armv7");
 
     public static string AppImageRuntimeX64 => FindHelperFile("appimagekit-runtime-x86_64");
 

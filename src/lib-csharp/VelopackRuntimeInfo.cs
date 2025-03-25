@@ -57,6 +57,9 @@ namespace Velopack
 
         /// <summary> Arm64 </summary>
         arm64 = 0xAA64,
+
+        /// <summary> Arm (32 bits) </summary>
+        arm = 0x01C0,
     }
 
     /// <summary> The Runtime OS </summary>
