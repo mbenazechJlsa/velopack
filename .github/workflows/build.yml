@@ -117,7 +117,7 @@ jobs:
           cp ./target/aarch64-unknown-linux-gnu/release/libvelopack_libc.a ./target/velopack_libc_linux_arm64_gnu.a
       - name: Build Rust (armv7)
         run: |
-          cargo build --release --target armv7-unknown-linux-musleabihf
+          cargo build --release --target armv7-unknown-linux-musleabihf --workspace --exclude velopack_nodeffi
           ldd ./target/armv7-unknown-linux-musleabihf/release/update || true
           cp ./target/armv7-unknown-linux-musleabihf/release/update ./target/UpdateNix_armv7
           cp ./target/armv7-unknown-linux-musleabihf/release/libvelopack_libc.so ./target/velopack_libc_linux_armv7_gnu.so
