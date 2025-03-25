@@ -92,6 +92,7 @@ jobs:
         run: |
           rustup target add aarch64-unknown-linux-gnu
           rustup target add armv7-unknown-linux-gnueabihf
+          rustup target add armv7-unknown-linux-musleabihf
           sudo apt update
           sudo apt install -y g++-aarch64-linux-gnu gcc-aarch64-linux-gnu
           sudo apt install -y gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
@@ -116,12 +117,12 @@ jobs:
           cp ./target/aarch64-unknown-linux-gnu/release/libvelopack_libc.a ./target/velopack_libc_linux_arm64_gnu.a
       - name: Build Rust (armv7)
         run: |
-          cargo build --release --target armv7-unknown-linux-gnueabihf
-          ldd ./target/armv7-unknown-linux-gnueabihf/release/update || true
-          cp ./target/armv7-unknown-linux-gnueabihf/release/update ./target/UpdateNix_armv7
-          cp ./target/armv7-unknown-linux-gnueabihf/release/libvelopack_nodeffi.so ./target/velopack_nodeffi_linux_armv7_gnu.node
-          cp ./target/armv7-unknown-linux-gnueabihf/release/libvelopack_libc.so ./target/velopack_libc_linux_armv7_gnu.so
-          cp ./target/armv7-unknown-linux-gnueabihf/release/libvelopack_libc.a ./target/velopack_libc_linux_armv7_gnu.a
+          cargo build --release --armv7-unknown-linux-musleabihf
+          ldd ./target/armv7-unknown-linux-musleabihf/release/update || true
+          cp ./target/armv7-unknown-linux-musleabihf/release/update ./target/UpdateNix_armv7
+          cp ./target/armv7-unknown-linux-musleabihf/release/libvelopack_nodeffi.so ./target/velopack_nodeffi_linux_armv7_gnu.node
+          cp ./target/armv7-unknown-linux-musleabihf/release/libvelopack_libc.so ./target/velopack_libc_linux_armv7_gnu.so
+          cp ./target/armv7-unknown-linux-musleabihf/release/libvelopack_libc.a ./target/velopack_libc_linux_armv7_gnu.a
       - name: Upload Rust Build Artifacts
         uses: actions/upload-artifact@v4
         with:
