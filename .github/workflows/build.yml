@@ -97,6 +97,7 @@ jobs:
           sudo apt update
           sudo apt install -y g++-aarch64-linux-gnu gcc-aarch64-linux-gnu
           sudo apt install -y gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
+          sudo apt install -y musl-tools 
       - name: Update Version
         shell: pwsh
         run: ./set-nbgv-version.ps1
